@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Filmes - Projeto Fullstack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .gradient-bg {
+            background: linear-gradient(120deg, #1e3c72 0%, #2a5298 100%);
+        }
+    </style>
+</head>
+<body>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600">
+                    🎬 CineLog
+                </div>
+                <div class="space-x-4">
+                    <a href="#sobre" class="text-gray-600 hover:text-purple-600">Sobre</a>
+                    <a href="#como-usar" class="text-gray-600 hover:text-purple-600">Como usar</a>
+                    <a href="http://localhost:5001" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700">Acessar App →</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="gradient-bg text-white py-20">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-4 animate-bounce">
+                Seu catálogo pessoal de filmes
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90">
+                Porque anotar num bloco de notas já era...
+            </p>
+            <div class="flex gap-4 justify-center">
+                <a href="#como-usar" class="bg-white text-purple-600 px-8 py-3 rounded-lg font-semibold hover:shadow-lg transition">
+                    Começar agora
+                </a>
+                <a href="https://github.com/seu-usuario/seu-repo" class="border-2 border-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-purple-600 transition">
+                    GitHub
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">📖 Sobre o projeto</h2>
+            <div class="max-w-3xl mx-auto text-gray-600 space-y-4 text-lg">
+                <p>
+                    Esse projeto nasceu de uma necessidade real: eu sempre esqueço quais filmes já assisti e as notas que dei pra eles. 
+                    Então resolvi criar essa aplicação fullstack simples mas funcional.
+                </p>
+                <p>
+                    O backend foi feito com <strong class="text-purple-600">Flask</strong>, usando blueprints pra organizar as rotas (porque ninguém merece um 
+                    app.py de 500 linhas). A API tem documentação Swagger automática e validação de dados com Pydantic.
+                </p>
+                <p>
+                    O frontend é <strong class="text-purple-600">Vanilla JavaScript</strong> mesmo - sem framework, porque as vezes menos é mais. 
+                    A interface consome a API e mostra feedback em tempo real.
+                </p>
+                <p class="bg-yellow-100 p-4 rounded-lg">
+                    ⚠️ <strong>Nota do dev:</strong> Esse código tem algumas "gambiarras" propositais (tipo o banco de dados em memória), 
+                    mas foi feito pra demonstrar conceitos reais de integração fullstack.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-usar" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">🚀 Como executar o projeto</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-900 text-white rounded-xl p-6 shadow-xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🐍</span>
+                        <h3 class="text-xl font-bold">Backend (Flask)</h3>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <p class="text-gray-400 mb-1">1. Clone o repositório</p>
+                            <code class="block bg-gray-800 p-2 rounded">git clone [seu-repo]</code>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 mb-1">2. Entre na pasta do backend</p>
+                            <code class="block bg-gray-800 p-2 rounded">cd filmes-app/backend</code>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 mb-1">3. Instale as dependências</p>
+                            <code class="block bg-gray-800 p-2 rounded">pip install -r requirements.txt</code>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 mb-1">4. Rode o servidor</p>
+                            <code class="block bg-gray-800 p-2 rounded">python app.py</code>
+                        </div>
+                        <div class="mt-3 pt-3 border-t border-gray-700">
+                            <p class="text-green-400">✅ A API vai rodar em <strong class="text-white">http://localhost:5000</strong></p>
+                            <p class="text-blue-400">📚 Swagger em <strong class="text-white">http://localhost:5000/swagger</strong></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Frontend -->
+                <div class="bg-gray-100 rounded-xl p-6 shadow-xl">
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-3xl">🎨</span>
+                        <h3 class="text-xl font-bold text-gray-800">Frontend (HTML/JS)</h3>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div>
+                            <p class="text-gray-600 mb-1">1. Entre na pasta do frontend</p>
+                            <code class="block bg-white p-2 rounded border">cd filmes-app/frontend</code>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 mb-1">2. Só abrir o arquivo</p>
+                            <code class="block bg-white p-2 rounded border">index.html</code>
+                        </div>
+                        <div>
+                            <p class="text-gray-600 mb-1">Ou use um servidor simples:</p>
+                            <code class="block bg-white p-2 rounded border">python -m http.server 8000</code>
+                        </div>
+                        <div class="mt-3 pt-3 border-t border-gray-300">
+                            <p class="text-purple-600">🌐 Acesse <strong>http://localhost:8000</strong> (ou direto pelo arquivo)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Seção Flet -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mt-6">
+                     <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 py-3">
+                        <h3 class="font-mono text-lg">3. Aplicação Desktop (Flet)</h3>
+                </div>
+                     <div class="p-6 space-y-3">
+                        <div>
+                            <p class="text-gray-700 mb-2">Entre na pasta do app Flet e instale as dependências:</p>
+                            <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>cd filmes-app/flet_apppip install -r requirements.txt</code></pre>
+                        </div>
+                     <div>
+                        <p class="text-gray-700 mb-2">Execute a aplicação:</p>
+                        <pre class="bg-gray-900 text-gray-100 p-4 rounded-lg overflow-x-auto"><code>python main.py</code></pre>
+                     </div>
+                     <div class="bg-purple-50 border-l-4 border-purple-500 p-4">
+                         <p class="text-purple-700">📱 O app Flet será aberto em uma janela nativa (Windows/macOS/Linux)</p>
+                         <p class="text-purple-700 text-sm mt-1">⚡ Interface moderna com Material Design e suporte a temas</p>
+                         <p class="text-purple-700 text-sm">🔄 Funcionalidades: Listagem, adição e exclusão de filmes</p>
+                     </div>
+                     </div>
+                </div>
+
+            <!-- Landing page extra -->
+            <div class="mt-8 text-center">
+                <div class="inline-block bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <p class="text-gray-700">
+                        📄 <strong>Landing page:</strong> você já está nela! <br>
+                        Basta abrir o arquivo <code class="bg-gray-200 px-2 py-1 rounded">landing/index.html</code> no navegador.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Endpoints da API -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">🔌 Endpoints disponíveis</h2>
+            <div class="max-w-2xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg shadow p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-green-500 text-white px-2 py-1 rounded text-xs">GET</span>
+                        <code class="text-gray-800">/api/filmes/</code>
+                    </div>
+                    <p class="text-gray-600 text-sm">Lista todos os filmes cadastrados (ordenados por nota)</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-green-500 text-white px-2 py-1 rounded text-xs">GET</span>
+                        <code class="text-gray-800">/api/filmes/{id}</code>
+                    </div>
+                    <p class="text-gray-600 text-sm">Busca um filme específico pelo ID</p>
+                </div>
+                <div class="bg-white rounded-lg shadow p-4">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="bg-blue-500 text-white px-2 py-1 rounded text-xs">POST</span>
+                        <code class="text-gray-800">/api/filmes/</code>
+                    </div>
+                    <p class="text-gray-600 text-sm">Cadastra um novo filme (com validação: título não pode ser genérico, ano entre 1888 e 2026)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer simplão -->
+    <footer class="bg-gray-900 text-white py-8 text-center">
+        <p>Feito com ❤️ e café (e um pouco de ódio também)</p>
+        <p class="text-sm text-gray-400 mt-2">Projeto demonstrativo - 2026</p>
+    </footer>
+</body>
+</html>
+
